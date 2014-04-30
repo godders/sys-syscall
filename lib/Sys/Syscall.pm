@@ -181,7 +181,7 @@ sub sendfile_freebsd {
 
 
     my $set = unpack("L", $sbytes_buf);
-    POSIX::lseek($_[1]+0, SEEK_CUR, $set);
+    POSIX::lseek($_[1]+0, $set, SEEK_CUR);
     return $set;
 }
 
